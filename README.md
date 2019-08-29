@@ -104,10 +104,22 @@ void main(void)
 
 Resources going forward:
 
-* [Here is an SDF library] (http://mercury.sexy/hg_sdf/) from  a demoscene group.
+* [Here is an SDF library](http://mercury.sexy/hg_sdf/) from  a demoscene group.
 
 
 * Again linking the useful function sheet I put together: [Glsl sticker sheet](https://gist.github.com/CharStiles/e6fec016967c6c8fd648aa4b6c0055cc)
-* [This ray marching tutorial](https://github.com/ajweeks/RaymarchingWorkshop) he does it a little differently than we did, so it would be good to go over that, but if you want to skip to stuff like simple shading and material go to the half way point. 
+* [This ray marching tutorial](https://github.com/ajweeks/RaymarchingWorkshop) he does it a little differently than we did, so it would be good to go over that, but if you want to skip to stuff like simple shading and material go to the half way point.
+* If a prompt sounds tempting I propose this: take this smooth min function and combine two different shapes together, and add some movement to the piece! This little exercise will be very rewarding.
+
+
+```
+// polynomial smooth min (k = 0.1);
+float sminCubic(float a, float b, float k)
+{
+ 
+    float h = max(k-abs(a-b), 0.0);
+    return min(a, b) - h*h*h/(6.0*k*k);
+}
+```
 
 Let me know if you make anything! Even if it's a little thing, let me know we can document it and make a recurser online gallery :D 
